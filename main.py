@@ -1,10 +1,10 @@
 def main():
     with open("./books/frankenstein.txt") as f:
         file_contents = f.read()
-        
-    # print(file_contents)
-    # print(count_words(file_contents))
-    # print (count_char(file_contents))
+    
+    wline()
+    print(file_contents)
+    wline()
     report(count_words(file_contents), count_char(file_contents))
     
 def count_words(text_in):
@@ -27,5 +27,10 @@ def report(words_count, char_count):
         if k.isalpha() != True:
             continue
         print (f"The '{k}' character was found {char_count[k]} times")
-          
+
+def wline():
+    print("\n\n")
+    for i in range (0,3):
+        print("*******************************************")
+    print("\n\n")         
 main()
